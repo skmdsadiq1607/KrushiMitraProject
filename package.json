@@ -1,0 +1,14 @@
+{
+  "name": "krushimitra",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "KrushiMitra - AI-Powered Crop Health Assistant",
+  "scripts": {
+    "server": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "build:client": "npm --prefix client run build",
+    "seed": "node scripts/seedDatabase.js"
+  }
+}

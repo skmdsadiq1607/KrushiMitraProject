@@ -1,0 +1,411 @@
+[
+  {
+    "id": "tomato-early-blight",
+    "name": "Early Blight",
+    "scientificName": "Alternaria solani",
+    "crop": "Tomato",
+    "type": "Disease",
+    "pathogen": "Fungus",
+    "severity": "Moderate",
+    "symptoms": [
+      "Dark brown to black necrotic spots with characteristic concentric rings ('bull's eye' appearance)",
+      "Symptoms usually originate on older, lower foliage and progress upward",
+      "Yellow halos (chlorosis) frequently surround maturing lesions",
+      "Severe infection causes extensive defoliation, exposing fruits to sunscald"
+    ],
+    "causes": [
+      "Fungal pathogen Alternaria solani surviving on infected crop residues or solanaceous weed hosts",
+      "Overhead splash irrigation dispersing fungal spores"
+    ],
+    "favorableConditions": {
+      "temperature": "24°C - 30°C",
+      "humidity": "Above 80%",
+      "weatherFactor": "Warm weather punctuated by frequent showers or heavy dew cycles"
+    },
+    "prevention": [
+      "Practice 2-3 year crop rotation with non-solanaceous crops (e.g. cereals, pulses)",
+      "Ensure adequate plant spacing to facilitate leaf drying and canopy airflow",
+      "Utilize drip irrigation instead of overhead sprinklers to minimize leaf wetness duration",
+      "Mulch soil beneath plants to prevent rain-splash transmission from soil"
+    ],
+    "management": [
+      "Prune and destroy severely infected lower leaves; burn or deeply bury debris away from field",
+      "Apply protective copper-based fungicides or bio-agents like Trichoderma viride / Pseudomonas fluorescens as per package label",
+      "Ensure balanced potassium nutrition to enhance natural plant defense mechanisms"
+    ],
+    "source": "ICAR-IIHR Tomato Disease Advisory & TNAU Agritech Portal"
+  },
+  {
+    "id": "tomato-late-blight",
+    "name": "Late Blight",
+    "scientificName": "Phytophthora infestans",
+    "crop": "Tomato",
+    "type": "Disease",
+    "pathogen": "Oomycete",
+    "severity": "Critical",
+    "symptoms": [
+      "Rapidly enlarging water-soaked, irregular pale green lesions on leaves",
+      "Lesions turn dark brown to purplish-black with fuzzy white fungal growth on undersides in moist mornings",
+      "Entire vines can collapse and wither within 3 to 7 days under favorable conditions",
+      "Fruit develops firm, greasy, olive-brown sunken blotches"
+    ],
+    "causes": [
+      "Oomycete Phytophthora infestans wind-borne sporangia",
+      "Prolonged cool, saturated foliage"
+    ],
+    "favorableConditions": {
+      "temperature": "15°C - 22°C",
+      "humidity": "Above 90% (Extended fog, cloudy days, prolonged drizzle)",
+      "weatherFactor": "Cool foggy mornings followed by humid overcast afternoons"
+    },
+    "prevention": [
+      "Plant certified disease-free transplants or resistant hybrids",
+      "Avoid poorly drained waterlogged soils",
+      "Strictly avoid overhead irrigation during cool humid spells"
+    ],
+    "management": [
+      "Immediate removal and destruction of infected vines to stop rapid spore dispersal",
+      "Apply approved protective or systemic fungicides strictly under agricultural extension guidance",
+      "Maintain field sanitation and consult local Krishi Vigyan Kendra (KVK) for regional spray alert schedules"
+    ],
+    "source": "ICAR-Central Potato Research Institute & ICAR-IIHR"
+  },
+  {
+    "id": "tomato-leaf-curl",
+    "name": "Tomato Leaf Curl",
+    "scientificName": "Tomato Leaf Curl Virus (ToLCV)",
+    "crop": "Tomato",
+    "type": "Disease",
+    "pathogen": "Begomovirus (transmitted by Bemisia tabaci)",
+    "severity": "High",
+    "symptoms": [
+      "Upward and inward curling, puckering, and crinkling of leaves",
+      "Severe stunting of young shoots, shortened internodes, bushy appearance",
+      "Yellowing (chlorosis) of interveinal leaf areas with thick, leathery leaf texture",
+      "Flower abortion and dramatically reduced fruit set"
+    ],
+    "causes": [
+      "Transmitted persistently by the whitefly vector (Bemisia tabaci)",
+      "Continuous cultivation of solanaceous crops supporting high vector populations"
+    ],
+    "favorableConditions": {
+      "temperature": "28°C - 38°C",
+      "humidity": "Low to moderate humidity with dry sunny spells",
+      "weatherFactor": "High temperatures favoring explosive whitefly multiplication"
+    },
+    "prevention": [
+      "Use nylon insect-proof net (40-50 mesh) in nurseries for 25-30 days prior to transplanting",
+      "Install yellow sticky traps (15-20 traps/acre) to monitor and mass-trap whitefly vectors",
+      "Grow border crops like maize, sorghum, or pearl millet (2-3 rows) as physical vector barriers"
+    ],
+    "management": [
+      "Rogue out and destroy infected viral plants during early vegetative stages",
+      "Spray 5% neem seed kernel extract (NSKE) or approved bio-pesticides to suppress vector nymphs",
+      "Consult KVK or local extension officer for IPM-compliant vector control thresholds"
+    ],
+    "source": "ICAR-IIHR Vegetable Pathology Division"
+  },
+  {
+    "id": "rice-blast",
+    "name": "Rice Blast",
+    "scientificName": "Magnaporthe oryzae (Pyricularia oryzae)",
+    "crop": "Rice",
+    "type": "Disease",
+    "pathogen": "Fungus",
+    "severity": "Critical",
+    "symptoms": [
+      "Spindle-shaped or eye-shaped lesions with grayish-white centers and brownish-red margins on leaves",
+      "Lesions coalesce, causing entire leaf blades to dry and present a scorched/blighted appearance",
+      "Neck blast: Blackish rotting of the panicle base node resulting in unfilled, completely white or broken heads"
+    ],
+    "causes": [
+      "Airborne conidia of Magnaporthe oryzae",
+      "Excessive and unbalanced application of nitrogenous fertilizers",
+      "Water stress or drought spells followed by heavy rains"
+    ],
+    "favorableConditions": {
+      "temperature": "20°C - 26°C",
+      "humidity": "Above 90% with dew deposit duration exceeding 10 hours",
+      "weatherFactor": "Intermittent drizzle, overcast conditions, cool nights"
+    },
+    "prevention": [
+      "Cultivate blast-resistant rice cultivars recommended for the agro-climatic zone",
+      "Apply balanced NPK fertilizers; split nitrogen into 3-4 doses rather than single heavy dressings",
+      "Seed treatment with bio-agent Pseudomonas fluorescens @ 10g/kg seed"
+    ],
+    "management": [
+      "Avoid stagnant nitrogenous water runoffs between plots",
+      "Foliar spray of recommended fungicides at early tillering and panicle emergence if disease score exceeds economic threshold",
+      "Follow advisory notices issued by the Directorate of Rice Research"
+    ],
+    "source": "ICAR - Indian Institute of Rice Research (IIRR), Hyderabad"
+  },
+  {
+    "id": "rice-sheath-blight",
+    "name": "Sheath Blight",
+    "scientificName": "Rhizoctonia solani",
+    "crop": "Rice",
+    "type": "Disease",
+    "pathogen": "Fungus",
+    "severity": "High",
+    "symptoms": [
+      "Oval or elliptical greenish-grey water-soaked spots on leaf sheaths near water line",
+      "Spots enlarge with irregular bands of brown borders resembling snake-skin pattern",
+      "Infection ascends up the sheath to flag leaf, causing lodging and empty grain heads"
+    ],
+    "causes": [
+      "Soil-borne sclerotia floating on floodwater contacting rice sheaths",
+      "High plant density and dense vegetative canopies"
+    ],
+    "favorableConditions": {
+      "temperature": "28°C - 32°C",
+      "humidity": "85% - 100%",
+      "weatherFactor": "High ambient temperature with dense canopy canopy humidity"
+    },
+    "prevention": [
+      "Optimum planting density (do not overcrowd seedlings)",
+      "Apply potassium fertilizers in split doses to strengthen stem cell walls",
+      "Drain standing water intermittently to reduce micro-humidity in canopy"
+    ],
+    "management": [
+      "Apply bio-control formulation of Trichoderma harzianum to soil/canopy",
+      "Spray recommended sheath protection fungicides at early symptom stage based on KVK advisory",
+      "Remove weeds from bunds that act as alternate host reservoirs"
+    ],
+    "source": "ICAR-IIRR Rice Protection Manual"
+  },
+  {
+    "id": "cotton-bacterial-blight",
+    "name": "Bacterial Blight / Angular Leaf Spot",
+    "scientificName": "Xanthomonas citri pv. malvacearum",
+    "crop": "Cotton",
+    "type": "Disease",
+    "pathogen": "Bacterium",
+    "severity": "Moderate",
+    "symptoms": [
+      "Small, angular, water-soaked translucent lesions bounded by leaf veins",
+      "Lesions turn dark brown to black (Angular leaf spot phase)",
+      "Elongated black lesions on petiole and stem (Blackarm phase)",
+      "Round water-soaked spots on young bolls causing premature shedding"
+    ],
+    "causes": [
+      "Seed-borne and debris-borne bacterium Xanthomonas",
+      "Spreading via driving rainstorms, wind, and irrigation water"
+    ],
+    "favorableConditions": {
+      "temperature": "25°C - 30°C",
+      "humidity": "Above 80%",
+      "weatherFactor": "Continuous monsoon rains accompanied by gusty winds"
+    },
+    "prevention": [
+      "Acid delinting of cotton seeds before sowing",
+      "Seed treatment with approved bio-protectants",
+      "Eradicate infected stubbles and volunteer cotton seedlings post-harvest"
+    ],
+    "management": [
+      "Foliar spray of copper oxychloride combined with agricultural bactericide as per official university package of practices",
+      "Maintain clean cultivation and proper field drainage"
+    ],
+    "source": "ICAR - Central Institute for Cotton Research (CICR)"
+  },
+  {
+    "id": "cotton-bollworm",
+    "name": "Bollworm Complex Damage",
+    "scientificName": "Helicoverpa armigera / Earias spp. / Pectinophora gossypiella",
+    "crop": "Cotton",
+    "type": "Pest",
+    "pathogen": "Insect Pest (Lepidoptera)",
+    "severity": "Critical",
+    "symptoms": [
+      "Bored holes on squares and developing bolls with visible granular larval frass (excreta)",
+      "Flared squares (bracts opening prematurely) and premature shedding of fruiting forms",
+      "Pink bollworm creates rosette flowers and stains internal lint"
+    ],
+    "causes": [
+      "Larvae hatching from eggs laid by nocturnal moths on tender leaves and flowers",
+      "Resistance buildup due to indiscriminate pesticide sprays"
+    ],
+    "favorableConditions": {
+      "temperature": "22°C - 32°C",
+      "humidity": "60% - 80%",
+      "weatherFactor": "Warm humid cloudy weather during flowering and boll formation"
+    },
+    "prevention": [
+      "Install pheromone traps (5 traps/acre for monitoring, 10-15 traps/acre for mass trapping)",
+      "Erect bird perches (15-20 per acre) to encourage predatory insectivorous birds",
+      "Intercrop with cowpea, pigeonpea, or marigold as trap crops"
+    ],
+    "management": [
+      "Release egg parasitoid Trichogramma chilonis @ 60,000/acre weekly",
+      "Spray HaNPV (Helicoverpa Nuclear Polyhedrosis Virus) or Bacillus thuringiensis (Bt) formulations",
+      "Use chemical insecticides only when damage exceeds Economic Threshold Level (ETL: 1 larva/plant or 5-10% damaged bolls)"
+    ],
+    "source": "ICAR-CICR Nagpur & State Agricultural Universities"
+  },
+  {
+    "id": "soybean-rust",
+    "name": "Soybean Rust",
+    "scientificName": "Phakopsora pachyrhizi",
+    "crop": "Soybean",
+    "type": "Disease",
+    "pathogen": "Fungus",
+    "severity": "High",
+    "symptoms": [
+      "Tiny, brown to reddish-brown polygonal pustules (uredinia) on underside of leaves",
+      "Pustules rupture to release tan dust-like airborne spores",
+      "Severe chlorosis, early rapid defoliation, and aborted or undersized seeds"
+    ],
+    "causes": [
+      "Obligate fungal pathogen Phakopsora pachyrhizi dispersing by wind over long distances"
+    ],
+    "favorableConditions": {
+      "temperature": "18°C - 26°C",
+      "humidity": "Above 80% with prolonged canopy leaf wetness (> 6 hours)",
+      "weatherFactor": "Extended cloudy, wet spells during flowering and pod development"
+    },
+    "prevention": [
+      "Early sowing of recommended tolerant varieties",
+      "Avoid excessively dense row planting to improve air circulation",
+      "Monitor lower leaves systematically from flowering stage"
+    ],
+    "management": [
+      "Prophylactic foliar spray of approved triazole fungicides upon first appearance of pustules in the region",
+      "Consult regional ICAR-IISR advisory bulletins for timely community-level intervention"
+    ],
+    "source": "ICAR - Indian Institute of Soybean Research (IISR), Indore"
+  },
+  {
+    "id": "maize-fall-armyworm",
+    "name": "Fall Armyworm Damage",
+    "scientificName": "Spodoptera frugiperda",
+    "crop": "Maize",
+    "type": "Pest",
+    "pathogen": "Invasive Insect Pest",
+    "severity": "Critical",
+    "symptoms": [
+      "Elongated papery feeding windows on leaves created by young neonate larvae",
+      "Extensive ragged 'shot holes' and shredded leaf whorls as larvae mature",
+      "Massive accumulation of wet yellowish-brown sawdust-like frass inside the central whorl",
+      "Boring into developing cobs and tassels"
+    ],
+    "causes": [
+      "High fecundity invasive pest Spodoptera frugiperda larvae feeding protected inside whorls"
+    ],
+    "favorableConditions": {
+      "temperature": "20°C - 35°C",
+      "humidity": "50% - 80%",
+      "weatherFactor": "Warm conditions with intermittent rainfall fostering lush whorl growth"
+    },
+    "prevention": [
+      "Deep summer ploughing to expose pupae to predatory birds and solar heat",
+      "Intercropping maize with pulses (e.g. cowpea) to disrupt egg laying",
+      "Apply sand + wood ash or neem cake mixture into central whorls of plants at 15-20 days after emergence"
+    ],
+    "management": [
+      "Hand-picking of egg masses and destroying early-stage larvae",
+      "Apply bio-agents Metarhizium rileyi or Beauveria bassiana @ 5g/liter",
+      "Apply whorl-directed sprays of university-approved larvicides when 10% plants show damage"
+    ],
+    "source": "ICAR - Indian Institute of Maize Research (IIMR) & Directorate of Plant Protection"
+  },
+  {
+    "id": "chilli-anthracnose",
+    "name": "Chilli Anthracnose / Fruit Rot / Die-back",
+    "scientificName": "Colletotrichum capsici",
+    "crop": "Chilli",
+    "type": "Disease",
+    "pathogen": "Fungus",
+    "severity": "High",
+    "symptoms": [
+      "Die-back: Tender twigs wither from the top downwards, turning straw-colored",
+      "Circular sunken necrotic spots on ripe red fruits with concentric rings of black acervuli",
+      "Infected fruits become bleached, dry, and shriveled; premature fruit drop"
+    ],
+    "causes": [
+      "Seed-borne and air-borne fungus Colletotrichum capsici",
+      "Spreads via splashing monsoon drops"
+    ],
+    "favorableConditions": {
+      "temperature": "28°C - 30°C",
+      "humidity": "Above 85%",
+      "weatherFactor": "Heavy rain showers followed by warm sunshine periods"
+    },
+    "prevention": [
+      "Use disease-free seeds treated with Trichoderma viride @ 4g/kg",
+      "Collect and incinerate plant stubbles and dried infected twigs",
+      "Avoid overhead sprinkler irrigation during fruit development"
+    ],
+    "management": [
+      "Foliar spray of copper oxychloride or university-recommended fungicides at flowering and fruit formation",
+      "Ensure proper row spacing and drainage to prevent soil moisture stagnation"
+    ],
+    "source": "TNAU Agritech Portal & ICAR-IIHR Vegetable Division"
+  },
+  {
+    "id": "nitrogen-deficiency",
+    "name": "Nitrogen Deficiency",
+    "scientificName": "Abiotic Nutrient Deficiency (N)",
+    "crop": "General / All Crops",
+    "type": "Nutrient deficiency",
+    "pathogen": "Abiotic",
+    "severity": "Moderate",
+    "symptoms": [
+      "General pale green to yellow discoloration (chlorosis) beginning on older, lower leaves",
+      "V-shaped yellowing advancing from leaf tip down the midrib (especially in maize/cereals)",
+      "Stunted overall vegetative growth, thin spindly stems, and reduced tillering/branching",
+      "Premature senescence of lower foliage"
+    ],
+    "causes": [
+      "Insufficient soil available nitrogen",
+      "Leaching in sandy soils during torrential rains or waterlogging impeding root uptake"
+    ],
+    "favorableConditions": {
+      "temperature": "Any",
+      "humidity": "Any",
+      "weatherFactor": "Excessive leaching rainfall or poor aeration in flooded soils"
+    },
+    "prevention": [
+      "Perform periodic soil testing to determine baseline organic carbon and available nitrogen",
+      "Incorporate well-rotted farmyard manure (FYM) or compost (5-10 tonnes/hectare) prior to sowing",
+      "Practice green manuring (e.g. Dhaincha / Sunn hemp) before kharif planting"
+    ],
+    "management": [
+      "Foliar spray of 1% to 2% urea solution for rapid foliar recovery in standing crops",
+      "Top-dress recommended split doses of nitrogen fertilizer (Urea / CAN) matching crop growth stages",
+      "Apply bio-fertilizers like Azotobacter or Azospirillum"
+    ],
+    "source": "ICAR - Indian Institute of Soil Science (IISS), Bhopal"
+  },
+  {
+    "id": "potassium-deficiency",
+    "name": "Potassium Deficiency",
+    "scientificName": "Abiotic Nutrient Deficiency (K)",
+    "crop": "General / All Crops",
+    "type": "Nutrient deficiency",
+    "pathogen": "Abiotic",
+    "severity": "Moderate",
+    "symptoms": [
+      "Marginal chlorosis followed by browning and scorch ('firing') of older leaf margins",
+      "Leaf edges curl upward or downward with ragged appearance",
+      "Weak stems and culms leading to susceptibility to lodging and fungal infections",
+      "Poor grain filling and reduced fruit quality/luster"
+    ],
+    "causes": [
+      "Depleted soil exchangeable potassium, particularly in light sandy or acidic soils"
+    ],
+    "favorableConditions": {
+      "temperature": "Any",
+      "humidity": "Any",
+      "weatherFactor": "Drought stress or severely leached sandy soils"
+    },
+    "prevention": [
+      "Incorporate Muriate of Potash (MOP) or Sulfate of Potash as per soil test recommendations",
+      "Maintain adequate soil organic matter to enhance cation exchange capacity (CEC)"
+    ],
+    "management": [
+      "Foliar spray of 1% potassium nitrate (13:0:45) or sulfate of potash during peak vegetative and fruiting phases",
+      "Ensure proper irrigation as moisture facilitates potassium ion diffusion to roots"
+    ],
+    "source": "ICAR-IISS & International Potash Institute (IPI) Guidelines"
+  }
+]

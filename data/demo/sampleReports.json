@@ -1,0 +1,82 @@
+[
+  {
+    "id": "report-1",
+    "reporterName": "Ramesh Patil",
+    "crop": "Cotton",
+    "issue": "Pink Bollworm / Square Flaring",
+    "severity": "High",
+    "description": "Observed flared bracts on young squares in western block; 2 out of 20 sampled bolls have small entrance pinholes.",
+    "location": {
+      "region": "Wardha / Vidarbha, Maharashtra",
+      "lat": 20.7453,
+      "lng": 78.6022
+    },
+    "date": "2025-05-11T08:30:00.000Z",
+    "status": "Under Review",
+    "isDemo": true
+  },
+  {
+    "id": "report-2",
+    "reporterName": "Suresh Reddy",
+    "crop": "Chilli",
+    "issue": "Chilli Murda / Thrips & Leaf Curl",
+    "severity": "Moderate",
+    "description": "Top tender foliage exhibiting upward leaf curling with bronzing on undersides across 1.5 acres.",
+    "location": {
+      "region": "Warangal, Telangana",
+      "lat": 17.9784,
+      "lng": 79.5941
+    },
+    "date": "2025-05-09T11:00:00.000Z",
+    "status": "Verified",
+    "isDemo": true
+  },
+  {
+    "id": "report-3",
+    "reporterName": "Anand Verma",
+    "crop": "Soybean",
+    "issue": "Soybean Rust Pustules",
+    "severity": "Critical",
+    "description": "Rapid spread of tan uredinial rust pustules on lower leaves following 4 days of continuous overcast drizzle.",
+    "location": {
+      "region": "Indore, Madhya Pradesh",
+      "lat": 22.7196,
+      "lng": 75.8577
+    },
+    "date": "2025-05-12T15:20:00.000Z",
+    "status": "Action Required",
+    "isDemo": true
+  },
+  {
+    "id": "report-4",
+    "reporterName": "Manpreet Singh",
+    "crop": "Rice",
+    "issue": "Sheath Blight Water Lesions",
+    "severity": "Moderate",
+    "description": "Greenish-grey snake-skin lesions on lower tillers near stagnant water line in paddy nursery.",
+    "location": {
+      "region": "Karnal, Haryana",
+      "lat": 29.6857,
+      "lng": 76.9905
+    },
+    "date": "2025-05-07T07:45:00.000Z",
+    "status": "Verified",
+    "isDemo": true
+  },
+  {
+    "id": "report-5",
+    "reporterName": "Lakshmanan K",
+    "crop": "Tomato",
+    "issue": "Early Blight Bullseye Spots",
+    "severity": "Moderate",
+    "description": "Concentric ring spots noticed on bottom 3 branches after heavy morning mist.",
+    "location": {
+      "region": "Dindigul, Tamil Nadu",
+      "lat": 10.3673,
+      "lng": 77.9803
+    },
+    "date": "2025-05-13T10:10:00.000Z",
+    "status": "Action Required",
+    "isDemo": true
+  }
+]

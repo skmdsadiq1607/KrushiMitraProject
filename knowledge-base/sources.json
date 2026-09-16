@@ -1,0 +1,76 @@
+{
+  "sources": [
+    {
+      "id": "icar",
+      "name": "Indian Council of Agricultural Research (ICAR)",
+      "organization": "ICAR, Ministry of Agriculture & Farmers Welfare, Govt of India",
+      "url": "https://icar.org.in",
+      "type": "National Agricultural Research Apex Body",
+      "reliability": "Highest - Official Indian Federal Research"
+    },
+    {
+      "id": "icar_nbair",
+      "name": "ICAR-National Bureau of Agricultural Insect Resources (NBAIR)",
+      "organization": "ICAR-NBAIR, Bengaluru",
+      "url": "https://nbair.res.in",
+      "type": "Apex Agricultural Entomology & Biological Pest Control Institute",
+      "reliability": "Highest - Biological control agents & insect biodiversity"
+    },
+    {
+      "id": "icar_nriipm",
+      "name": "ICAR-National Research Centre for Integrated Pest Management (NCIPM / NRIIPM)",
+      "organization": "ICAR-NCIPM, New Delhi",
+      "url": "https://ncipm.icar.gov.in",
+      "type": "National IPM Implementation & Validation Authority",
+      "reliability": "Highest - Ecological IPM guidelines & pest monitoring"
+    },
+    {
+      "id": "tnau_agritech",
+      "name": "TNAU Agritech Portal",
+      "organization": "Tamil Nadu Agricultural University",
+      "url": "https://agritech.tnau.ac.in",
+      "type": "State Agricultural University Extension Portal",
+      "reliability": "High - Peer-reviewed field advisories"
+    },
+    {
+      "id": "iihr",
+      "name": "ICAR-Indian Institute of Horticultural Research",
+      "organization": "ICAR-IIHR, Bengaluru",
+      "url": "https://iihr.res.in",
+      "type": "Specialized Horticultural Research Institute",
+      "reliability": "Highest - Vegetable and Fruit crop pathology"
+    },
+    {
+      "id": "cicr",
+      "name": "ICAR-Central Institute for Cotton Research",
+      "organization": "ICAR-CICR, Nagpur",
+      "url": "https://cicr.icar.gov.in",
+      "type": "Specialized Fiber Crop Research Institute",
+      "reliability": "Highest - Cotton pest & disease management"
+    },
+    {
+      "id": "iirr",
+      "name": "ICAR-Indian Institute of Rice Research",
+      "organization": "ICAR-IIRR, Hyderabad",
+      "url": "https://icar-iirr.org",
+      "type": "Specialized Grain Crop Research Institute",
+      "reliability": "Highest - Paddy rice protection"
+    },
+    {
+      "id": "iimr",
+      "name": "ICAR-Indian Institute of Maize Research",
+      "organization": "ICAR-IIMR, Ludhiana",
+      "url": "https://iimr.icar.gov.in",
+      "type": "Specialized Coarse Cereal Research Institute",
+      "reliability": "Highest - Maize pathology & entomology"
+    },
+    {
+      "id": "iisr_soybean",
+      "name": "ICAR-Indian Institute of Soybean Research",
+      "organization": "ICAR-IISR, Indore",
+      "url": "https://iisrindore.icar.gov.in",
+      "type": "Specialized Oilseed Research Institute",
+      "reliability": "Highest - Soybean disease & IPM"
+    }
+  ]
+}

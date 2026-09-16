@@ -1,0 +1,15 @@
+{
+  "short_name": "KrushiMitra",
+  "name": "KrushiMitra - AI Crop Health Assistant",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#064e3b",
+  "theme_color": "#059669",
+  "display": "standalone"
+}

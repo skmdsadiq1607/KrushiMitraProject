@@ -1,0 +1,94 @@
+[
+  {
+    "id": "demo-diag-1",
+    "crop": "Tomato",
+    "problem": "Early Blight (Alternaria solani)",
+    "confidence": 89,
+    "severity": "Moderate",
+    "plantPart": "Foliage / Lower Leaves",
+    "isHealthy": false,
+    "symptoms": [
+      "Concentric circular brown spots ('target' rings) on lower foliage",
+      "Yellow chlorotic halos surrounding lesions",
+      "Lower leaf yellowing and early defoliation"
+    ],
+    "possibleCauses": [
+      "Alternaria solani fungal spores splash-dispersed from damp soil",
+      "High canopy humidity and prolonged leaf wetness"
+    ],
+    "management": [
+      "Prune and destroy infected lower leaves immediately",
+      "Apply protective copper oxychloride or bio-control agent Trichoderma viride",
+      "Switch from overhead watering to drip irrigation to keep foliage dry"
+    ],
+    "prevention": [
+      "Rotate crops with non-solanaceous crops for 2-3 years",
+      "Maintain 60cm row spacing for good air circulation",
+      "Apply clean straw mulch around plant bases"
+    ],
+    "expertAdvice": "Monitor upper canopy. If lesions spread above mid-canopy or weather remains rainy, consult your local KVK extension officer.",
+    "disclaimer": "Informational assessment based on image analysis. Always verify with local agricultural experts before applying chemical interventions.",
+    "imageUrl": "https://images.unsplash.com/photo-1592417817098-8f3d6910985b?w=600&auto=format&fit=crop&q=80",
+    "date": "2025-05-12T10:30:00.000Z"
+  },
+  {
+    "id": "demo-diag-2",
+    "crop": "Rice",
+    "problem": "Rice Blast (Magnaporthe oryzae)",
+    "confidence": 92,
+    "severity": "Critical",
+    "plantPart": "Leaf Blade",
+    "isHealthy": false,
+    "symptoms": [
+      "Spindle-shaped elliptical lesions with grayish-white centers and reddish-brown borders",
+      "Lesions coalescing causing leaf blighting and drying"
+    ],
+    "possibleCauses": [
+      "High nitrogen application coupled with cool nights and morning dew (>10 hrs)",
+      "Airborne fungal conidia"
+    ],
+    "management": [
+      "Avoid top dressing with excess urea immediately",
+      "Apply university-recommended blast fungicide at early tillering stage",
+      "Maintain regulated water level without stagnant nitrogen runoff"
+    ],
+    "prevention": [
+      "Use certified blast-resistant cultivars (e.g., IR64 or regional hybrids)",
+      "Split nitrogen into 3-4 split applications",
+      "Seed treatment with Pseudomonas fluorescens @ 10g/kg"
+    ],
+    "expertAdvice": "Critical outbreak risk. Field inspection recommended to rule out neck blast prior to heading.",
+    "disclaimer": "Informational assessment based on image analysis. Consult official ICAR-IIRR advisories.",
+    "imageUrl": "https://images.unsplash.com/photo-1536617621972-60253e485e35?w=600&auto=format&fit=crop&q=80",
+    "date": "2025-05-10T14:15:00.000Z"
+  },
+  {
+    "id": "demo-diag-3",
+    "crop": "Cotton",
+    "problem": "Healthy Crop",
+    "confidence": 95,
+    "severity": "Low",
+    "plantPart": "Vegetative Canopy & Squares",
+    "isHealthy": true,
+    "symptoms": [
+      "Vigorous green leaves with intact margins",
+      "Normal square development without flaring or bore holes",
+      "No active pest colonies or fungal lesions observed"
+    ],
+    "possibleCauses": [
+      "Optimal soil moisture, balanced fertilization, and effective IPM monitoring"
+    ],
+    "management": [
+      "Continue regular scouting twice a week for early sucking pest or bollworm emergence",
+      "Maintain clean field borders and weed-free bunds"
+    ],
+    "prevention": [
+      "Install pheromone traps (5/acre) for early pest monitoring",
+      "Preserve natural beneficial predators like ladybird beetles and spiders"
+    ],
+    "expertAdvice": "Crop is in excellent physiological health. Maintain balanced nutrient schedule through boll development.",
+    "disclaimer": "Routine image check. Regular field scouting is still advised during flower and boll formation.",
+    "imageUrl": "https://images.unsplash.com/photo-1606041008023-472dfb5e530f?w=600&auto=format&fit=crop&q=80",
+    "date": "2025-05-08T09:00:00.000Z"
+  }
+]

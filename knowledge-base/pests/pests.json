@@ -1,0 +1,66 @@
+[
+  {
+    "id": "rice-stem-borer",
+    "name": "Yellow Stem Borer",
+    "scientificName": "Scirpophaga incertulas",
+    "crop": "Rice",
+    "type": "Pest",
+    "severity": "Critical",
+    "symptoms": [
+      "Dead hearts: Drying of central growing tiller shoots during vegetative stage",
+      "White ears / Whiteheads: Completely chaffy, bleached white panicles standing upright at heading stage",
+      "Tiny entry bore-holes visible at the base of the rice culm"
+    ],
+    "causes": [
+      "Moth laying mass eggs near leaf tips covered in buff-colored anal hairs; larvae boring directly inside stem"
+    ],
+    "favorableConditions": {
+      "temperature": "20°C - 30°C",
+      "humidity": "Above 80%",
+      "weatherFactor": "Cloudy, warm humid conditions in late Kharif season"
+    },
+    "prevention": [
+      "Clip the leaf tips of rice seedlings before transplanting to remove egg masses",
+      "Set up light traps and pheromone traps (5 traps/acre) to track moth emergence",
+      "Destroy rice stubbles immediately after harvest through deep tilling"
+    ],
+    "management": [
+      "Release egg parasitoid Trichogramma japonicum @ 40,000/acre at weekly intervals",
+      "Apply recommended granular or liquid bio-insecticides when dead heart percentage exceeds ETL (5-10%)",
+      "Coordinate pest monitoring with the local Agricultural Extension Officer"
+    ],
+    "source": "ICAR - Indian Institute of Rice Research (IIRR)"
+  },
+  {
+    "id": "chilli-thrips",
+    "name": "Chilli Thrips",
+    "scientificName": "Scirtothrips dorsalis",
+    "crop": "Chilli",
+    "type": "Pest",
+    "severity": "High",
+    "symptoms": [
+      "Upward curling of leaf margins ('boat-shaped' leaves)",
+      "Silvering and bronzing on the lower surface of leaves",
+      "Petiole elongation, brittle crinkly leaves, and stunted plant buds ('Murda' complex)"
+    ],
+    "causes": [
+      "Microscopic slender fringed-winged insects rasping foliage cells and sucking cell sap"
+    ],
+    "favorableConditions": {
+      "temperature": "28°C - 35°C",
+      "humidity": "Below 60% with dry warm spells",
+      "weatherFactor": "Dry hot periods with absence of heavy rain washes"
+    },
+    "prevention": [
+      "Install blue sticky traps (15-20 traps/acre) specifically attractive to thrips",
+      "Intercrop with maize, cowpea, or coriander to encourage natural predators like anthocorid bugs",
+      "Sprinkler irrigation washings help dislodge thrips populations"
+    ],
+    "management": [
+      "Foliar spray of 5% Neem Seed Kernel Extract (NSKE) or entomopathogenic fungus Lecanicillium lecanii @ 5g/liter",
+      "Spray approved eco-friendly insecticides strictly if leaf damage crosses ETL (1-2 thrips per leaf)",
+      "Rotate chemical modes of action to prevent rapid insecticide resistance"
+    ],
+    "source": "ICAR-IIHR Bengaluru & TNAU"
+  }
+]

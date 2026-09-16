@@ -1,0 +1,104 @@
+[
+  {
+    "id": "rice",
+    "name": "Rice",
+    "scientificName": "Oryza sativa",
+    "category": "Cereal / Grain",
+    "season": "Kharif / Rabi",
+    "description": "The primary staple cereal crop of India, grown extensively in wetlands and irrigated alluvial plains.",
+    "growthStages": ["Germination", "Tillering", "Stem Elongation", "Panicle Initiation", "Flowering / Heading", "Grain Filling", "Maturity"],
+    "optimalConditions": {
+      "temperature": "20°C - 35°C",
+      "humidity": "70% - 90%",
+      "soil": "Clayey loam, alluvial soil with high water retention capacity",
+      "rainfall": "1000 - 1500 mm"
+    },
+    "vulnerabilities": ["Blast", "Sheath Blight", "Brown Spot", "Bacterial Leaf Blight", "Stem Borer", "Brown Planthopper"],
+    "source": "ICAR - Indian Institute of Rice Research (IIRR)"
+  },
+  {
+    "id": "cotton",
+    "name": "Cotton",
+    "scientificName": "Gossypium hirsutum",
+    "category": "Fiber / Cash Crop",
+    "season": "Kharif",
+    "description": "Major commercial cash crop known as 'White Gold', cultivated in black cotton soils across western and central India.",
+    "growthStages": ["Seedling", "Square Formation", "Flowering", "Boll Development", "Boll Bursting / Harvest"],
+    "optimalConditions": {
+      "temperature": "21°C - 32°C",
+      "humidity": "50% - 75%",
+      "soil": "Deep black soils (Regur), well-drained fertile loam",
+      "rainfall": "500 - 1000 mm"
+    },
+    "vulnerabilities": ["Bollworm complex", "Bacterial Blight", "Cotton Leaf Curl Virus", "Grey Mildew", "Sucking Pests (Whitefly, Thrips)"],
+    "source": "ICAR - Central Institute for Cotton Research (CICR)"
+  },
+  {
+    "id": "soybean",
+    "name": "Soybean",
+    "scientificName": "Glycine max",
+    "category": "Oilseed / Legume",
+    "season": "Kharif",
+    "description": "Important protein and edible oil crop prominent in central India (Madhya Pradesh, Maharashtra).",
+    "growthStages": ["Emergence", "Vegetative Growth", "Flowering", "Pod Development", "Seed Filling", "Maturity"],
+    "optimalConditions": {
+      "temperature": "20°C - 30°C",
+      "humidity": "60% - 80%",
+      "soil": "Well-drained fertile loamy soil with neutral pH (6.5 - 7.5)",
+      "rainfall": "600 - 850 mm"
+    },
+    "vulnerabilities": ["Soybean Rust", "Yellow Mosaic Virus", "Collar Rot", "Girdle Beetle", "Tobacco Caterpillar"],
+    "source": "ICAR - Indian Institute of Soybean Research (IISR)"
+  },
+  {
+    "id": "maize",
+    "name": "Maize",
+    "scientificName": "Zea mays",
+    "category": "Cereal / Coarse Grain",
+    "season": "Kharif / Rabi",
+    "description": "Known as the 'Queen of Cereals' due to high genetic yield potential, utilized for food, poultry feed, and industrial starch.",
+    "growthStages": ["Seedling", "Knee High", "Tasseling", "Silking", "Milk Stage", "Dough Stage", "Physiological Maturity"],
+    "optimalConditions": {
+      "temperature": "18°C - 30°C",
+      "humidity": "55% - 75%",
+      "soil": "Deep, rich, well-drained fertile sandy loam to clay loam",
+      "rainfall": "500 - 750 mm"
+    },
+    "vulnerabilities": ["Fall Armyworm", "Turcicum Leaf Blight", "Maydis Leaf Blight", "Common Rust", "Stem Borer"],
+    "source": "ICAR - Indian Institute of Maize Research (IIMR)"
+  },
+  {
+    "id": "tomato",
+    "name": "Tomato",
+    "scientificName": "Solanum lycopersicum",
+    "category": "Vegetable / Solanaceous",
+    "season": "Year-round (Autumn / Spring / Summer)",
+    "description": "High-value commercial vegetable crop grown across diverse climatic zones in India.",
+    "growthStages": ["Seedling / Nursery", "Transplanting", "Vegetative Growth", "Flowering", "Fruit Set", "Fruit Ripening", "Harvesting"],
+    "optimalConditions": {
+      "temperature": "18°C - 27°C",
+      "humidity": "60% - 75%",
+      "soil": "Well-drained sandy loam rich in organic matter (pH 6.0 - 7.0)",
+      "rainfall": "600 - 1000 mm"
+    },
+    "vulnerabilities": ["Early Blight", "Late Blight", "Tomato Leaf Curl Virus", "Bacterial Wilt", "Septoria Leaf Spot", "Fruit Borer"],
+    "source": "ICAR - Indian Institute of Horticultural Research (IIHR)"
+  },
+  {
+    "id": "chilli",
+    "name": "Chilli",
+    "scientificName": "Capsicum annuum",
+    "category": "Spices / Solanaceous",
+    "season": "Kharif / Rabi",
+    "description": "Universal culinary spice and cash crop widely cultivated in southern and western India.",
+    "growthStages": ["Nursery", "Vegetative", "Flower Bud Initiation", "Fruit Formation", "Fruit Maturation / Picking"],
+    "optimalConditions": {
+      "temperature": "20°C - 30°C",
+      "humidity": "50% - 70%",
+      "soil": "Well-aerated, well-drained loam or light clay soil with rich organic content",
+      "rainfall": "600 - 1200 mm"
+    },
+    "vulnerabilities": ["Anthracnose / Die Back", "Chilli Leaf Curl Virus", "Powdery Mildew", "Thrips & Mites", "Damping Off"],
+    "source": "TNAU Agritech Portal & ICAR-IIHR"
+  }
+]

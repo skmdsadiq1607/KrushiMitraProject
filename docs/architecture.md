@@ -2,12 +2,12 @@
 
 ## 1. High-Level Architecture Overview
 
-**Crop Health AI** is structured as a decoupled Full-Stack MERN (MongoDB, Express.js, React.js, Node.js) web application engineered for rapid agricultural image assessment, risk alerting, and agronomic knowledge retrieval.
+**KrushiMitra** is structured as a decoupled Full-Stack MERN (MongoDB, Express.js, React.js, Node.js) web application engineered for rapid agricultural image assessment, risk alerting, and agronomic knowledge retrieval.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                      CLIENT TIER                            │
-│  React.js (v18) + Vite + TypeScript + Tailwind CSS          │
+│  React.js (v18) + Vite (Pure JavaScript / JSX) + Tailwind   │
 │  - Lucide React Iconography                                 │
 │  - Recharts Diagnostic Visualizations                       │
 │  - Leaflet / React Leaflet Geospatial Community Outbreak Map│

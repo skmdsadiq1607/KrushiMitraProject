@@ -29,7 +29,7 @@ A decoupled, lightweight MERN platform that allows farmers to upload leaf photos
 ## 2. Technical Architecture & Methodology
 
 ### 2.1 Technology Stack
-- **Frontend**: React 18, Vite, TypeScript, Tailwind CSS, Recharts, Leaflet, Lucide Icons.
+- **Frontend**: React 18, Vite (Pure JavaScript / JSX), Tailwind CSS, Recharts, Leaflet, Lucide Icons.
 - **Backend**: Node.js, Express.js, JWT Authentication, Multer In-Memory Storage, Axios.
 - **Database**: MongoDB Atlas with Mongoose ODM.
 - **AI Inference**: Groq Vision Cloud (`llama-3.2-11b-vision-preview` and `llama-3.3-70b-versatile`).

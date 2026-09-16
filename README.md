@@ -56,7 +56,7 @@ Express.js + Node.js Backend (Port 5000)
 ## 5. Technology Stack
 
 ### Frontend
-- **Framework**: React 18, Vite, TypeScript
+- **Framework**: React 18, Vite (Pure JavaScript / JSX)
 - **Styling**: Tailwind CSS with custom agriculture palette
 - **Routing**: React Router DOM (v6)
 - **Visualizations**: Recharts (Pie & Bar charts)
@@ -76,15 +76,14 @@ Express.js + Node.js Backend (Port 5000)
 
 ```
 KrushiMitraProject/
-├── client/                     # React + Vite + TypeScript Frontend
+├── client/                     # Pure JavaScript (React + Vite + JSX) Frontend
 │   ├── src/
 │   │   ├── components/         # Navbar, Footer, SeverityBadge, Animation, ResultCard
 │   │   ├── context/            # AuthContext (JWT) & ThemeContext (Dark/Light)
 │   │   ├── pages/              # LandingPage, Dashboard, Diagnose, History, etc.
-│   │   ├── services/           # Typed Axios API Client
-│   │   └── types/              # TypeScript interface definitions
+│   │   └── services/           # Axios API Client
 │   ├── package.json
-│   └── vite.config.ts
+│   └── vite.config.js
 ├── server/                     # Node.js + Express REST API Backend
 │   ├── src/
 │   │   ├── config/             # Database connection with graceful offline fallback

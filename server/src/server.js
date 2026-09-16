@@ -41,7 +41,7 @@ app.get('/api/health', (req, res) => {
 
   res.json({
     status: 'healthy',
-    application: 'Crop Health AI',
+    application: 'KrushiMitra',
     version: '1.0.0',
     database: dbStatus,
     groqConfigured: hasGroq,

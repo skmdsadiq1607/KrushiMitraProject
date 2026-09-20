@@ -4,7 +4,7 @@ const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("crop_health_theme");
     if (saved) return saved;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "light";
   });
   useEffect(() => {
     const root = document.documentElement;

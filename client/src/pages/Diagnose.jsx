@@ -134,85 +134,168 @@ const Diagnose = () => {
     setSelectedCrop("auto");
     setError("");
   };
-  return <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">{
-    /* Page Header */
-  }<div className="text-center max-w-2xl mx-auto space-y-2"><div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-xs font-bold"><Sparkles className="w-3.5 h-3.5 text-emerald-600" /><span>Groq Llama 3.2 Vision Diagnostic Studio</span></div><h1 className="text-3xl font-black text-slate-900 dark:text-white">
-          Crop Health Image Diagnosis
-        </h1><p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-          Upload a high-resolution photograph of affected plant leaves to detect foliar diseases, fungal blights, and pest infestations.
-        </p></div>{
-    /* When analysis is active */
-  }{isAnalyzing && <AnalysisAnimation />}{
-    /* When analysis is complete */
-  }{!isAnalyzing && result && <DiagnosisResultCard result={result} onReset={resetAll} isSavedInitial={true} />}{
-    /* Upload Interface when not analyzing and no result */
-  }{!isAnalyzing && !result && <div className="max-w-3xl mx-auto space-y-6">{
-    /* Quick Sample Selector for Easy College Demo */
-  }<div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2.5"><div className="flex items-center justify-between"><span className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5"><HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
-                Quick Test: Load Pre-configured Specimen
-              </span><span className="text-[10px] text-slate-400">1-Click Evaluation Mode</span></div><div className="grid grid-cols-1 sm:grid-cols-3 gap-2">{SAMPLE_SPECIMENS.map((s, idx) => <button
-    key={idx}
-    type="button"
-    onClick={() => loadSampleSpecimen(s)}
-    className="p-2.5 rounded-xl text-left bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 transition-colors group"
-  ><p className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">{s.name}</p><p className="text-[10px] text-slate-500 truncate">{s.notes}</p></button>)}</div></div>{
-    /* Main Upload Box */
-  }<div className="p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">{error && <div className="p-3.5 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 text-xs flex items-center gap-2"><AlertCircle className="w-4 h-4 shrink-0" /><span>{error}</span></div>}{
-    /* Dropzone or Preview */
-  }{!previewUrl ? <div
-    onDrop={handleDrop}
-    onDragOver={handleDragOver}
-    onClick={() => fileInputRef.current?.click()}
-    className="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-2xl p-10 text-center hover:border-emerald-500 hover:bg-emerald-50/20 dark:hover:bg-emerald-950/20 transition-all cursor-pointer space-y-4"
-  ><input
-    ref={fileInputRef}
-    type="file"
-    accept="image/jpeg,image/png,image/webp"
-    className="hidden"
-    onChange={(e) => {
-      if (e.target.files && e.target.files[0]) {
-        handleFileChange(e.target.files[0]);
-      }
-    }}
-  /><div className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto shadow-inner"><UploadCloud className="w-8 h-8" /></div><div><p className="text-sm font-bold text-slate-800 dark:text-slate-200">
-                    Click to select or drag and drop crop photo
-                  </p><p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+  return (
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 animate-fade-in">
+      {/* Clean Page Header */}
+      <div className="text-center max-w-xl mx-auto space-y-2">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-semibold border border-emerald-200/80 dark:border-emerald-800/80 shadow-sm">
+          <Sparkles className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+          <span>Instant Plant Health Assessment</span>
+        </div>
+        <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+          Diagnose Plant Specimen
+        </h1>
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+          Upload a clear photo of the leaf or crop to detect diseases, pests, and safe treatment steps.
+        </p>
+      </div>
+
+      {/* Analysis Active State */}
+      {isAnalyzing && <AnalysisAnimation />}
+
+      {/* Analysis Complete Result */}
+      {!isAnalyzing && result && (
+        <DiagnosisResultCard result={result} onReset={resetAll} isSavedInitial={true} />
+      )}
+
+      {/* Upload Interface */}
+      {!isAnalyzing && !result && (
+        <div className="max-w-2xl mx-auto space-y-6">
+          {/* Quick Demo Specimen Chips */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl bg-slate-100/80 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs">
+            <span className="font-semibold text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+              <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
+              Try a sample leaf:
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {SAMPLE_SPECIMENS.map((s, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => loadSampleSpecimen(s)}
+                  className="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 hover:text-emerald-600 text-[11px] font-medium transition-colors"
+                >
+                  {s.crop}: {s.name.split(" ")[1] || s.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Main Upload Box */}
+          <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-sm space-y-5">
+            {error && (
+              <div className="p-3.5 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 text-xs flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                <span>{error}</span>
+              </div>
+            )}
+
+            {/* Dropzone or Preview */}
+            {!previewUrl ? (
+              <div
+                onDrop={handleDrop}
+                onDragOver={handleDragOver}
+                onClick={() => fileInputRef.current?.click()}
+                className="border-2 border-dashed border-slate-300 dark:border-slate-700 hover:border-emerald-500 hover:bg-emerald-50/20 dark:hover:bg-emerald-950/20 rounded-2xl p-10 text-center transition-all cursor-pointer space-y-3"
+              >
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  className="hidden"
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files[0]) {
+                      handleFileChange(e.target.files[0]);
+                    }
+                  }}
+                />
+                <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
+                  <UploadCloud className="w-7 h-7" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                    Click to browse or drop your plant photo here
+                  </p>
+                  <p className="text-xs text-slate-400 mt-1">
                     Supports JPG, PNG, WEBP up to 10MB
-                  </p></div></div> : <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 dark:border-slate-700 max-h-96 flex items-center justify-center group"><img
-    src={previewUrl}
-    alt="Crop Preview"
-    className="w-full h-80 object-contain"
-  /><button
-    type="button"
-    onClick={removeImage}
-    className="absolute top-3 right-3 p-2 rounded-full bg-slate-900/80 text-white hover:bg-red-600 transition-colors shadow-md"
-    title="Remove Image"
-  ><X className="w-4 h-4" /></button><div className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs font-semibold backdrop-blur">
-                  Specimen Ready for Vision AI
-                </div></div>}{
-    /* Inputs: Crop selection & Notes */
-  }<div className="grid grid-cols-1 md:grid-cols-2 gap-4"><div className="space-y-1.5"><label className="text-xs font-bold text-slate-700 dark:text-slate-300">
-                  Target Crop Type
-                </label><select
-    value={selectedCrop}
-    onChange={(e) => setSelectedCrop(e.target.value)}
-    className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-  ><option value="auto">Auto-detect from image</option><option value="Tomato">Tomato (Solanum lycopersicum)</option><option value="Rice">Rice / Paddy (Oryza sativa)</option><option value="Cotton">Cotton (Gossypium hirsutum)</option><option value="Soybean">Soybean (Glycine max)</option><option value="Maize">Maize / Corn (Zea mays)</option><option value="Chilli">Chilli / Pepper (Capsicum annuum)</option></select></div><div className="space-y-1.5"><label className="text-xs font-bold text-slate-700 dark:text-slate-300">
-                  Visible Symptoms or Context (Optional)
-                </label><input
-    type="text"
-    placeholder="e.g. Yellow halos on lower leaves, noticed after rain..."
-    value={notes}
-    onChange={(e) => setNotes(e.target.value)}
-    className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
-  /></div></div>{
-    /* Submit Action */
-  }<button
-    type="button"
-    onClick={handleAnalyze}
-    disabled={!previewUrl || isAnalyzing}
-    className={`w-full py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition-all ${previewUrl ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-emerald-600/25 hover:-translate-y-0.5" : "bg-slate-200 dark:bg-slate-800 text-slate-400 cursor-not-allowed"}`}
-  ><Camera className="w-5 h-5" /><span>Initiate AI Vision Diagnosis</span></button></div></div>}</div>;
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <div className="relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 dark:border-slate-700 h-72 flex items-center justify-center group">
+                <img
+                  src={previewUrl}
+                  alt="Crop Preview"
+                  className="w-full h-full object-contain"
+                />
+                <button
+                  type="button"
+                  onClick={removeImage}
+                  className="absolute top-3 right-3 p-1.5 rounded-full bg-slate-900/80 text-white hover:bg-red-600 transition-colors shadow"
+                  title="Remove Image"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+                <div className="absolute bottom-3 left-3 px-3 py-1 rounded-full bg-slate-900/80 text-white text-xs font-medium backdrop-blur">
+                  Image ready for diagnosis
+                </div>
+              </div>
+            )}
+
+            {/* Target Crop & Optional Context */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  Target Crop
+                </label>
+                <select
+                  value={selectedCrop}
+                  onChange={(e) => setSelectedCrop(e.target.value)}
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                >
+                  <option value="auto">Auto-detect from image</option>
+                  <option value="Tomato">Tomato</option>
+                  <option value="Rice">Rice / Paddy</option>
+                  <option value="Cotton">Cotton</option>
+                  <option value="Soybean">Soybean</option>
+                  <option value="Maize">Maize / Corn</option>
+                  <option value="Chilli">Chilli / Pepper</option>
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  Notes / Symptoms (Optional)
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Yellow halos on lower leaves..."
+                  value={notes}
+                  onChange={(e) => setNotes(e.target.value)}
+                  className="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                />
+              </div>
+            </div>
+
+            {/* Submit Action */}
+            <button
+              type="button"
+              onClick={handleAnalyze}
+              disabled={!previewUrl || isAnalyzing}
+              className={`w-full py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow transition-all ${
+                previewUrl
+                  ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-emerald-600/20 hover:-translate-y-0.5"
+                  : "bg-slate-100 dark:bg-slate-800 text-slate-400 cursor-not-allowed"
+              }`}
+            >
+              <Camera className="w-4 h-4" />
+              <span>Analyze Plant Health</span>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 export {
   Diagnose

@@ -15,7 +15,7 @@ import { WeatherRisk } from "./pages/WeatherRisk";
 import { FieldReports } from "./pages/FieldReports";
 import { AgricultureAssistant } from "./pages/AgricultureAssistant";
 const App = () => {
-  return <ThemeProvider><AuthProvider><BrowserRouter><div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors"><Navbar /><main className="flex-grow"><Routes><Route path="/" element={<LandingPage />} /><Route path="/login" element={<LoginPage />} /><Route path="/register" element={<RegisterPage />} /><Route
+  return <ThemeProvider><AuthProvider><BrowserRouter><div className="min-h-screen flex flex-col bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors"><Navbar /><main className="flex-grow"><Routes><Route path="/" element={<LandingPage />} /><Route path="/login" element={<LoginPage />} /><Route path="/register" element={<RegisterPage />} /><Route
     path="/dashboard"
     element={<ProtectedRoute><Dashboard /></ProtectedRoute>}
   /><Route path="/diagnose" element={<Diagnose />} /><Route path="/history" element={<DiagnosisHistory />} /><Route path="/disease-library" element={<DiseaseLibrary />} /><Route path="/weather-risk" element={<WeatherRisk />} /><Route path="/field-reports" element={<FieldReports />} /><Route path="/assistant" element={<AgricultureAssistant />} />{

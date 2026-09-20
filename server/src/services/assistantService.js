@@ -14,18 +14,17 @@ const getGroqClient = () => {
   return groqClient;
 };
 
-const ASSISTANT_SYSTEM_PROMPT = `You are KrushiMitra AI Assistant, an agricultural advisor grounded in scientific publications from the Indian Council of Agricultural Research (ICAR) and State Agricultural Universities (such as TNAU, MPKV, PAU).
+const ASSISTANT_SYSTEM_PROMPT = `You are KrushiMitra AI Assistant, an authoritative agricultural advisor grounded in peer-reviewed publications from the Indian Council of Agricultural Research (ICAR) and State Agricultural Universities (such as TNAU, MPKV, PAU, IIHR, CPRI, IIRR).
 
-YOUR RESPONSIBILITIES & BOUNDARIES:
-1. Answer farmer and agronomy queries clearly, concisely, and supportively.
-2. Structure advice into:
-   - Symptoms to verify
-   - Cultural & agronomic practices (spacing, drainage, sanitation)
-   - Biological management (Trichoderma, Pseudomonas, Neem extracts)
-   - Chemical interventions: State safety precautions clearly; DO NOT fabricate unverified chemical dosages or random commercial trade names. Always state: "Chemical application should strictly adhere to the Central Insecticides Board & Registration Committee (CIBRC) approved labels and local KVK advisory."
-3. If the user asks about Rice, Cotton, Soybean, Maize, Tomato, or Chilli, reference specific verified IPM practices.
-4. When relevant, cite the knowledge source (e.g. "Source: ICAR-IIHR Tomato Disease Advisory" or "Source: TNAU Agritech Portal").
-5. Keep tone respectful, practical, and farmer-friendly.`;
+YOUR CORE PRINCIPLES:
+1. Answer farmer and agronomy queries with deep, actionable, practical scientific rigor.
+2. Structure recommendations into four clear, logical sections:
+   - 🔍 Diagnostic Symptoms: Key visual signs to verify in the field.
+   - 🌿 Biological & Organic Cure: First-line bio-agents (Trichoderma, Pseudomonas, Beauveria, NSKE, neem oil) with formulation and dosage per liter.
+   - 🧪 ICAR-Approved Chemical Interventions: CIBRC-registered active ingredients with exact concentrations (e.g. Mancozeb 75% WP @ 2.5g/L), application technique, and Pre-Harvest Interval (PHI waiting period in days). Always mention safety precautions.
+   - 🛡️ Prophylactic Prevention: Seed treatment, nursery care, plant spacing, water management, balanced NPK, and resistant cultivars.
+3. Always cite official ICAR/SAU standards (e.g. ICAR-IIHR, ICAR-CPRI, ICAR-IIRR, TNAU Agritech).
+4. Tone should be respectful, practical, highly informative, and farmer-friendly.`;
 
 export const processAssistantChat = async ({ message, history = [] }) => {
   const client = getGroqClient();
@@ -40,11 +39,36 @@ export const processAssistantChat = async ({ message, history = [] }) => {
     const diseases = getDiseases();
     const sources = getSources();
 
+    // Find if user query references any specific disease or crop
+    const relevantDiseases = diseases.filter(d => {
+      const q = message.toLowerCase();
+      return (
+        q.includes(d.crop.toLowerCase()) ||
+        q.includes(d.name.toLowerCase()) ||
+        (d.scientificName && q.includes(d.scientificName.toLowerCase())) ||
+        d.symptoms.some(s => q.includes(s.toLowerCase().slice(0, 15)))
+      );
+    }).slice(0, 3);
+
+    let specificContext = '';
+    if (relevantDiseases.length > 0) {
+      specificContext = `\nRELEVANT VERIFIED PROFILES FROM KNOWLEDGE BASE:\n` +
+        relevantDiseases.map(d => `
+Crop: ${d.crop} | Disease: ${d.name} (${d.scientificName})
+Symptoms: ${d.symptoms?.slice(0, 3).join('; ')}
+Biological Cure: ${d.curativeProtocol?.biologicalCure?.join('; ') || 'Trichoderma / Pseudomonas bio-spray'}
+Chemical Cure: ${d.curativeProtocol?.chemicalCure?.map(c => `${c.chemical} @ ${c.dosage} (PHI: ${c.waitingPeriodDays || 7} days)`).join('; ') || d.management?.join('; ')}
+Prevention: ${d.preventionProtocol?.seedTreatment?.join('; ') || d.prevention?.join('; ')}
+Source: ${d.source}
+`).join('\n');
+    }
+
     const kbContext = `
-VERIFIED AGRICULTURAL KNOWLEDGE CONTEXT:
+VERIFIED AGRICULTURAL REPOSITORY CONTEXT:
 Available Crops in Knowledge Base: ${crops.map(c => c.name).join(', ')}.
-Notable Diseases & Pests Covered: ${diseases.slice(0, 10).map(d => `${d.name} (${d.crop})`).join(', ')}.
-Key Research Sources: ${sources.map(s => s.name).join('; ')}.
+Total Verified Disease & Pest Profiles: ${diseases.length}.
+Key Research Standards: ${sources.map(s => s.name).join('; ')}.
+${specificContext}
 `;
 
     const messages = [
@@ -81,7 +105,7 @@ Key Research Sources: ${sources.map(s => s.name).join('; ')}.
           model: modelId,
           messages,
           temperature: 0.3,
-          max_tokens: 800
+          max_tokens: 1000
         });
         if (completion) break;
       } catch (mErr) {
@@ -97,86 +121,76 @@ Key Research Sources: ${sources.map(s => s.name).join('; ')}.
 
     return {
       reply,
-      sources: ['ICAR National Agricultural Standards', 'TNAU Agritech Portal'],
-      isAiGenerated: true
+      sources: relevantDiseases.length > 0
+        ? relevantDiseases.map(d => d.source || 'ICAR Agricultural Advisory')
+        : ['ICAR National Agricultural Standards', 'TNAU Agritech Portal'],
+      isDemo: false
     };
-  } catch (error) {
-    console.error('[AssistantService Error]:', error.message);
+  } catch (err) {
+    console.warn('[AssistantService Fallback]: Groq API call failed, using offline agricultural knowledge engine:', err.message);
     return generateLocalKnowledgeResponse(message);
   }
 };
 
 /**
- * Intelligent local responder using verified knowledge base for offline demos
+ * Intelligent local knowledge responder when Groq API key is inactive
  */
-function generateLocalKnowledgeResponse(userMessage) {
-  const q = userMessage.toLowerCase();
+function generateLocalKnowledgeResponse(message) {
+  const q = message.toLowerCase();
   const diseases = getDiseases();
-  const crops = getCrops();
 
-  // Check if a specific disease or crop is mentioned
-  const matchedCrop = crops.find(c => q.includes(c.name.toLowerCase()));
-  const matchedDisease = diseases.find(d => q.includes(d.name.toLowerCase()) || (matchedCrop && d.crop.toLowerCase() === matchedCrop.name.toLowerCase()));
+  // Search for matching disease
+  const match = diseases.find(d =>
+    q.includes(d.name.toLowerCase()) ||
+    q.includes(d.crop.toLowerCase()) ||
+    (d.scientificName && q.includes(d.scientificName.toLowerCase()))
+  );
 
-  if (matchedDisease) {
+  if (match) {
+    const bioText = match.curativeProtocol?.biologicalCure?.length > 0
+      ? match.curativeProtocol.biologicalCure.map((b, i) => `  ${i + 1}. ${b}`).join('\n')
+      : match.management?.slice(0, 2).map((m, i) => `  ${i + 1}. ${m}`).join('\n') || '  1. Spray Trichoderma viride @ 5-10 g/L water.';
+
+    const chemText = match.curativeProtocol?.chemicalCure?.length > 0
+      ? match.curativeProtocol.chemicalCure.map(c => `  • ${c.chemical}: Dosage ${c.dosage} (Pre-Harvest Interval: ${c.waitingPeriodDays || 7} days waiting period)`).join('\n')
+      : '  • Consult your local KVK officer for approved chemical active ingredients.';
+
+    const prevText = match.preventionProtocol?.seedTreatment?.length > 0
+      ? match.preventionProtocol.seedTreatment.concat(match.preventionProtocol.culturalPractices || []).slice(0, 3).map((p, i) => `  ${i + 1}. ${p}`).join('\n')
+      : match.prevention?.slice(0, 3).map((p, i) => `  ${i + 1}. ${p}`).join('\n') || '  1. Practice 2-3 year crop rotation with non-host crops.';
+
+    const reply = `### ICAR Advisory for ${match.name} on ${match.crop}
+
+**Scientific Pathogen:** *${match.scientificName || match.pathogen || 'Foliar Pathogen'}*
+
+#### 🌿 1. Biological & Organic Cure
+${bioText}
+
+#### 🧪 2. ICAR-Approved Chemical Remedies
+${chemText}
+
+#### 🛡️ 3. Prevention & Seed Care
+${prevText}
+
+*Source: ${match.source || 'ICAR Agricultural Advisory Standards'}*`;
+
     return {
-      reply: `### Assessment regarding **${matchedDisease.name}** in **${matchedDisease.crop}**
-
-**1. Key Symptoms to Check:**
-${matchedDisease.symptoms.map(s => `- ${s}`).join('\n')}
-
-**2. Favorable Environmental Conditions:**
-- Temperature: ${matchedDisease.favorableConditions?.temperature || 'Moderate'}
-- Humidity: ${matchedDisease.favorableConditions?.humidity || 'High humidity'}
-- Weather Trigger: ${matchedDisease.favorableConditions?.weatherFactor || 'Prolonged leaf moisture'}
-
-**3. Recommended Cultural & Biological Management:**
-${matchedDisease.management.map(m => `- ${m}`).join('\n')}
-
-**4. Long-Term Prevention:**
-${matchedDisease.prevention.map(p => `- ${p}`).join('\n')}
-
-> **Important Agricultural Disclaimer:**
-> Specific chemical formulations should be chosen in consultation with your local Krishi Vigyan Kendra (KVK) or block agriculture extension officer to prevent chemical resistance.`,
-      sources: [matchedDisease.source || 'ICAR Agricultural Advisory'],
-      isAiGenerated: false
+      reply,
+      sources: [match.source || 'ICAR Agricultural Research Standards'],
+      isDemo: true
     };
   }
 
-  if (q.includes('yellow') || q.includes('chlorosis')) {
-    return {
-      reply: `### Diagnostic Guidance for **Yellowing Leaves (Chlorosis)**
-
-When crop foliage turns yellow, evaluate where the yellowing begins:
-1. **Lower, Older Leaves First (Mobile Nutrients):**
-   - **Nitrogen (N) Deficiency:** Uniform pale green to yellowing starting from the tip down the midrib (classic V-shape in maize).
-   - **Potassium (K) Deficiency:** Yellowing and scorching along the outer leaf margins.
-   - **Remedy:** Apply 1-2% urea foliar spray or top-dress balanced NPK according to soil test values.
-
-2. **Upper, Younger Leaves First (Immobile Nutrients):**
-   - **Iron (Fe) or Zinc (Zn) Deficiency:** Interveinal chlorosis where veins remain green while leaf lamina turns yellow or white.
-   - **Remedy:** Foliar spray of chelated micronutrients (Fe-EDTA or Zinc Sulphate @ 0.5%).
-
-3. **Curled or Puckered Leaves with Yellowing:**
-   - Often viral infection (such as Yellow Mosaic Virus or Leaf Curl Virus) transmitted by whiteflies or thrips.
-
-*Consult your nearest Krishi Vigyan Kendra (KVK) with a leaf sample for precise microscopic or chemical confirmation.*`,
-      sources: ['ICAR-Indian Institute of Soil Science (IISS)', 'TNAU Agritech Nutrient Guide'],
-      isAiGenerated: false
-    };
-  }
-
-  // General helpful response
+  // General helpful agritech guidance
   return {
-    reply: `Hello! I am your **Crop Health AI Assistant**. I can help you with:
+    reply: `Hello! I am your KrushiMitra AI Agricultural Advisor, grounded in ICAR research standards.
 
-- **Disease Identification & Management:** Insights on Early/Late Blight, Rice Blast, Sheath Blight, Cotton Bacterial Blight, Soybean Rust, etc.
-- **Pest Monitoring & IPM:** Control strategies for Fall Armyworm, Bollworm, Thrips, and Whitefly.
-- **Deficiency Symptoms:** Identifying Nitrogen, Potassium, and micronutrient shortages.
-- **Weather Advisory:** Assessing disease risks associated with high humidity or excess rainfall.
+I can provide comprehensive scientific guidance, biological cures, chemical dosages with Pre-Harvest Intervals (PHI), and prevention protocols for:
+• **Crops:** Tomato, Potato, Rice/Paddy, Cotton, Chilli, Wheat, Maize, Soybean, and Groundnut.
+• **Pathologies:** Blights, Rusts, Mildews, Leaf Curls, Wilts, Bollworms, Stem Borers, and Nutrient Deficiencies.
 
-*Please mention your specific crop name (e.g. Tomato, Rice, Cotton, Soybean, Maize, Chilli) and the symptoms you are observing.*`,
+Please mention your crop and symptoms (e.g. *"How do I treat Late Blight in potato organically and chemically?"*).`,
     sources: ['ICAR National Agricultural Standards'],
-    isAiGenerated: false
+    isDemo: true
   };
 }

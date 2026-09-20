@@ -32,6 +32,10 @@ const diseaseSchema = new mongoose.Schema({
     enum: ['Low', 'Moderate', 'High', 'Critical'],
     default: 'Moderate'
   },
+  diseaseCycle: {
+    type: String,
+    default: ''
+  },
   symptoms: [{ type: String }],
   causes: [{ type: String }],
   favorableConditions: {
@@ -41,6 +45,25 @@ const diseaseSchema = new mongoose.Schema({
   },
   prevention: [{ type: String }],
   management: [{ type: String }],
+  preventionProtocol: {
+    seedTreatment: [{ type: String }],
+    culturalPractices: [{ type: String }],
+    vectorAndPhysical: [{ type: String }],
+    resistantCultivars: [{ type: String }]
+  },
+  curativeProtocol: {
+    biologicalCure: [{ type: String }],
+    chemicalCure: [
+      {
+        chemical: String,
+        dosage: String,
+        method: String,
+        waitingPeriodDays: Number,
+        precautions: String
+      }
+    ],
+    sanitation: [{ type: String }]
+  },
   source: {
     type: String,
     default: 'ICAR / TNAU Advisory'
